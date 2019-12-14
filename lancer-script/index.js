@@ -1503,7 +1503,7 @@ module.exports = function lancer(dispatch) {
     msgSuppress = event.message;
   });
 
-  dispatch.hook('C_START_INSTANCE_SKILL', 5, (event) => {
+  dispatch.hook('C_START_INSTANCE_SKILL', 7, (event) => {
     if (blockActive ==1) {
       return false;
     }

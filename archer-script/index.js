@@ -1196,10 +1196,10 @@ module.exports = function archer(dispatch) {
 
     dispatch.hook('S_ABNORMALITY_REFRESH', 1, (event) => {
         if (!enabled) return;
-        if (job == JOB_ARCHER && event.id == 600502 && VELIKALERT && VELIKPREALERT >0) {
+   /*     if (job == JOB_ARCHER && event.id == 600502 && VELIKALERT && VELIKPREALERT >0) {
             clearTimeout(velikTimer);
             velikTimer = setTimeout(function () {
-                dispatch.toClient('S_WHISPER', 2, {
+                dispatch.toClient('S_WHISPER', 3, {
                     player: cid,
                     unk1: 0,
                     gm: 0,
@@ -1209,7 +1209,7 @@ module.exports = function archer(dispatch) {
                     message: "Velik Mark Nearly Expired.",
                 });
             }, (VELIKPREALERT *1000));
-        }
+        }*/
     });
 
     dispatch.hook('S_ABNORMALITY_BEGIN', 3, (event) => {
@@ -1217,10 +1217,10 @@ module.exports = function archer(dispatch) {
         if (event.target !== cid) {
             return;
         }
-        if (job == JOB_ARCHER && event.id == 600502 && VELIKALERT && VELIKPREALERT >0) {
+       /* if (job == JOB_ARCHER && event.id == 600502 && VELIKALERT && VELIKPREALERT >0) {
             clearTimeout(velikTimer);
             velikTimer = setTimeout(function () {
-                dispatch.toClient('S_WHISPER', 2, {
+                dispatch.toClient('S_WHISPER', 3, {
                     player: cid,
                     unk1: 0,
                     gm: 0,
@@ -1230,7 +1230,7 @@ module.exports = function archer(dispatch) {
                     message: "Velik Mark Nearly Expired.",
                 });
             }, (VELIKPREALERT *1000));
-        }
+        }*/
         if (job == JOB_ARCHER && event.id == SEQFIREID) {
             seqFireCan = true;
         }
@@ -1307,9 +1307,9 @@ module.exports = function archer(dispatch) {
         if (event.target !== cid) {
             return;
         }
-        if (job == JOB_ARCHER && event.id == 600502 && VELIKALERT) {
+     /*   if (job == JOB_ARCHER && event.id == 600502 && VELIKALERT) {
             clearTimeout(velikTimer);
-            dispatch.toClient('S_WHISPER', 2, {
+            dispatch.toClient('S_WHISPER', 3, {
                 player: cid,
                 unk1: 0,
                 gm: 0,
@@ -1318,7 +1318,7 @@ module.exports = function archer(dispatch) {
                 recipient: player,
                 message: "Velik Mark Expired.",
             });
-        }
+        }*/
         if (job == JOB_ARCHER && event.id == SEQFIREID) {
             seqFireCan = false;
         }
@@ -1991,7 +1991,7 @@ module.exports = function archer(dispatch) {
     dispatch.hook('S_ACTION_STAGE', 9, (event) => {
 	  //console.log("test: " + event.skill == 67113692);
         if (!enabled) return;
-        if (event.gameId === cid) {
+       /* if (event.gameId === cid) {
             if (SNIPERALERT && !sniperState && event.skill.id != S_SNIPEREYE) {
                 dispatch.toClient('S_WHISPER', 2, {
                     player: cid,
@@ -2002,7 +2002,7 @@ module.exports = function archer(dispatch) {
                     recipient: player,
                     message: "Sniper's Eye is not active.",
                 });
-            }
+            }*/
             chargeSkillFix2 = event.skill.id;
             var d = new Date();
             lastSkillTime[1] = d.getTime();

@@ -1389,18 +1389,18 @@ module.exports = function archer(dispatch) {
         }
     });
 
-    dispatch.hook('C_START_COMBO_INSTANT_SKILL', 4, (event) => {
+    dispatch.hook('C_START_COMBO_INSTANT_SKILL', 6, (event) => {
         if (!enabled) return;
 		if(disabSkill["yolo"]){return false;}
         if (disabSkill[event.skill.id] == 'undefined') disabSkill[event.skill.id] = false;
         if (!disabSkill[event.skill.id]) {
             lastSkillDelay =999999;
-            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 4, event); }, 25, event);
-            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 4, event); }, 50, event);
-            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 4, event); }, 75, event);
-            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 4, event); }, 100, event);
-            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 4, event); }, 150, event);
-            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 4, event); }, 200, event);
+            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 6, event); }, 25, event);
+            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 6, event); }, 50, event);
+            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 6, event); }, 75, event);
+            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 6, event); }, 100, event);
+            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 6, event); }, 150, event);
+            setTimeout(function (event) { dispatch.toServer('C_START_COMBO_INSTANT_SKILL', 6, event); }, 200, event);
             if (job == JOB_ARCHER && event.skill.id == S_RAPIDFIRE) {
                 disabSkill[event.skill.id] = true;
                 var timer = setTimeout(function () { disabSkill[S_RAPIDFIRE] = false; }, GLOBAL_LOCK_DELAY *2);

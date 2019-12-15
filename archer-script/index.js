@@ -1199,7 +1199,7 @@ module.exports = function archer(dispatch) {
         if (job == JOB_ARCHER && event.id == 600502 && VELIKALERT && VELIKPREALERT >0) {
             clearTimeout(velikTimer);
             velikTimer = setTimeout(function () {
-                dispatch.toClient('S_WHISPER', 1, {
+                dispatch.toClient('S_WHISPER', 2, {
                     player: cid,
                     unk1: 0,
                     gm: 0,
@@ -1309,7 +1309,7 @@ module.exports = function archer(dispatch) {
         }
         if (job == JOB_ARCHER && event.id == 600502 && VELIKALERT) {
             clearTimeout(velikTimer);
-            dispatch.toClient('S_WHISPER', 1, {
+            dispatch.toClient('S_WHISPER', 2, {
                 player: cid,
                 unk1: 0,
                 gm: 0,

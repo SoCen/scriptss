@@ -1484,7 +1484,7 @@ module.exports = function archer(dispatch) {
 
     });
 
-    dispatch.hook('C_START_INSTANCE_SKILL', 5, (event) => {
+    dispatch.hook('C_START_INSTANCE_SKILL', 7, (event) => {
         if (!enabled) return;
 
         if (disabSkill[event.skill.id] == 'undefined') disabSkill[event.skill.id] = false;
@@ -1494,10 +1494,10 @@ module.exports = function archer(dispatch) {
                 return false;
             }
             if (!(event.skill.id == GALE1 || event.skill.id == GALE2 || event.skill.id == GALE3 || event.skill.id == GALE4 || event.skill.id == GALE5 || event.skill.id == GALE6 || event.skill.id == GALE7 || event.skill.id == GALE8 || event.skill.id == GALE9)) {
-                setTimeout(function (event) { if (lastSkill == event.skill.id) { dispatch.toServer('C_START_INSTANCE_SKILL', 5, event); } }, 25, event);
-                setTimeout(function (event) { if (lastSkill == event.skill.id) { dispatch.toServer('C_START_INSTANCE_SKILL', 5, event); } }, 50, event);
-                setTimeout(function (event) { if (lastSkill == event.skill.id) { dispatch.toServer('C_START_INSTANCE_SKILL', 5, event); } }, 75, event);
-                setTimeout(function (event) { if (lastSkill == event.skill.id) { dispatch.toServer('C_START_INSTANCE_SKILL', 5, event); } }, 100, event);
+                setTimeout(function (event) { if (lastSkill == event.skill.id) { dispatch.toServer('C_START_INSTANCE_SKILL', 7, event); } }, 25, event);
+                setTimeout(function (event) { if (lastSkill == event.skill.id) { dispatch.toServer('C_START_INSTANCE_SKILL', 7, event); } }, 50, event);
+                setTimeout(function (event) { if (lastSkill == event.skill.id) { dispatch.toServer('C_START_INSTANCE_SKILL', 7, event); } }, 75, event);
+                setTimeout(function (event) { if (lastSkill == event.skill.id) { dispatch.toServer('C_START_INSTANCE_SKILL', 7, event); } }, 100, event);
             }
             if (job == JOB_ARCHER && event.skill.id == S_ARROW) {
                 disabSkill[event.skill.id] = true;
